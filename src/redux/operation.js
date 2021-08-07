@@ -13,7 +13,7 @@ import {
   getContactSuccess,
 } from "./action";
 
-axios.defaults.baseURL = "http://localhost:4040";
+axios.defaults.baseURL = "http://localhost:1111";
 
 export const getContactOperation = () => async (dispatch) => {
   dispatch(getContactRequest());

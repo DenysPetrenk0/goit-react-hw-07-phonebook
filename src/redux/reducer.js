@@ -28,19 +28,23 @@ const filterReducer = createReducer("", {
 const loadingReducer = createReducer(false, {
   [getContactRequest]: () => true,
   [getContactSuccess]: () => false,
-  [getContactError]: () => false,
   [addContactRequest]: () => true,
   [addContactSuccess]: () => false,
-  [addContactError]: () => false,
   [deleteContactRequest]: () => true,
   [deleteContactSuccess]: () => false,
-  [deleteContactError]: () => false,
+});
+
+const errorReducer = createReducer(null, {
+  [getContactError]: (error) => error,
+  [addContactError]: (error) => error,
+  [deleteContactError]: (error) => error,
 });
 
 const contactReducer = combineReducers({
   items: itemsreducer,
   filter: filterReducer,
   loading: loadingReducer,
+  error: errorReducer,
 });
 
 export default contactReducer;

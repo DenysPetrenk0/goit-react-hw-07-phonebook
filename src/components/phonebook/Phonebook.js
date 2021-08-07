@@ -6,6 +6,7 @@ import {
   addContactOperation,
   getContactOperation,
 } from "../../redux/operation";
+import { getContacts } from "../../redux/contacts-selectors";
 
 class Phonebook extends Component {
   state = {
@@ -74,7 +75,7 @@ class Phonebook extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contacts.items,
+    contacts: getContacts(state),
   };
 };
 
